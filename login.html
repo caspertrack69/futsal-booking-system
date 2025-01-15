@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - FutsalKu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">FutsalKu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="booking.html">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="riwayat.html">Riwayat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profil.html">Profil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-body">
+            <h2 class="text-center mb-4">Login</h2>
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="role" class="form-label">Login Sebagai</label>
+                <select class="form-select" id="role" required>
+                  <option value="customer">Customer</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="text-center mb-0">&copy; 2025 FutsalKu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Simulasi Login
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const role = document.getElementById('role').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Validasi sederhana
+      if (email === "admin@futsalku.com" && password === "admin123" && role === "admin") {
+        window.location.href = "admin.html"; 
+      } else if (email === "customer@futsalku.com" && password === "customer123" && role === "customer") {
+        window.location.href = "index.html"; 
+      } else {
+        alert("Email atau password salah!");
+      }
+    });
+  </script>
+</body>
+</html>
